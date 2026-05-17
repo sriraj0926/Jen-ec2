@@ -5,11 +5,6 @@ description = "Backend logic implementation for https://github.com/gothinkster/r
 authors = ["qiucheng <qiucheng@jinniuai.com"]
 license = "MIT"
 
-
-[[tool.poetry.source]]
-name = 'tsinghua'
-url = 'https://pypi.tuna.tsinghua.edu.cn/simple'
-
 [tool.poetry.dependencies]
 python = "^3.7"
 uvicorn = "^0.6.1"
