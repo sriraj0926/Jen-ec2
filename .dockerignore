@@ -3,7 +3,6 @@
 .git*
 .travis.yml
 Procfile
-requirements.txt
 runtime.txt
 README.rst
 LICENSE
