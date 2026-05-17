@@ -1,15 +1,13 @@
-FROM python:3.10
+FROM python:3.11
 
-COPY poetry.lock /
-COPY pyproject.toml .
-RUN pip install poetry && \
-    poetry config virtualenvs.create false && \
-    poetry install
+WORKDIR /app
 
-COPY . /
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
 
 EXPOSE 8000
 
-CMD alembic upgrade head && \
-    gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0
-
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
