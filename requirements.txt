@@ -1,4 +1,5 @@
 fastapi
+python-slugify
 uvicorn
 gunicorn
 motor
